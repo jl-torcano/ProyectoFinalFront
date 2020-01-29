@@ -1,0 +1,16 @@
+<h2>MODIFICAR LISTADO DE MASCOTAS</h2>
+
+<form action="">
+    <label for="nombre" placeholder="Nombre Mascota">Nombre de Mascota</label>
+    <input type="text" required autocomplete="off" name="nombre" id="nombre" [(ngModel)]="mascota.nombre">
+
+    <label for="tipo" placeholder="Tipo Mascota">Tipo de Mascota</label>
+    <input type="text" required autocomplete="off" name="tipo" id="tipo" [(ngModel)]="mascota.tipo">
+
+    <label for="precio" placeholder="Precio Mascota">Precio de la Mascota</label>
+    <input type="text" required autocomplete="off" name="precio" id="precio" [(ngModel)]="mascota.precio">
+
+    <label for="vendida" placeholder="Estado Mascota">En stock (1) / Vendida (-1) </label>
+    <input type="text" required autocomplete="off" name="vendida" id="vendida" [(ngModel)]="mascota.vendida">
+
+    <button (click)="modificarMascota(mascota)">Modificar</button>

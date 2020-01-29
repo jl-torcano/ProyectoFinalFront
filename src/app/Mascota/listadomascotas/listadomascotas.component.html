@@ -1,0 +1,22 @@
+<h2>Listado de Mascotas </h2>
+
+<table>
+    <tr>
+        <th>id</th>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Precio</th>
+        <th>Vendida (1) / En Stock (-1)</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+    </tr>
+    <tr *ngFor="let mascota of listadoMascotas">
+        <td>{{mascota.id}}</td>
+        <td>{{mascota.nombre}}</td>
+        <td>{{mascota.tipo}}</td>
+        <td>{{mascota.precio}}</td>
+        <td>{{mascota.vendida}}</td>
+        <td><button (click)="editarMascota(mascota)">modificar</button></td>
+        <td><button (click)="eliminarMascota(mascota)">eliminar</button></td>
+    </tr>
+</table>
