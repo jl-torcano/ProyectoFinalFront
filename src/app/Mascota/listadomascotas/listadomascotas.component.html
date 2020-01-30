@@ -6,6 +6,17 @@
     <button (click)="historico()">Historico de ventas</button>
 
     <button (click)="stock()">Mascotas en Stock</button>
+
+    <button (click)="listadoCompleto()">Listado Completo</button>
+</div>
+
+<div>
+    <form (submit)="buscaTipo()">
+        <label for="tipo" placeholder="Tipo de Mascota">Introduzca tipo de Mascota</label>
+        <input type="text" required autocomplete="off" name="patiposs" id="tipo" [(ngModel)]="tipo">
+
+        <button (click)="submit">Entrar</button>
+    </form>
 </div>
 
 <table>
@@ -28,3 +39,7 @@
         <td><button (click)="eliminarMascota(mascota)">eliminar</button></td>
     </tr>
 </table>
+
+<div>
+    <h5>Total Ventas: {{totalventas}}</h5>
+</div>

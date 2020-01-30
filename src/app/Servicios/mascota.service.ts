@@ -18,20 +18,16 @@ export class MascotaService {
     return this.http.get<Mascota[]>(this.path);
   }
 
-  getTipoMascotas() {
-    return this.http.get<Mascota[]>(this.path + "/tipo");
+  getTipoMascotas(tipo:string) {
+    return this.http.get<Mascota[]>(this.path + "/tipo/"+tipo);
   }
 
   getUnaMascota(id: number) {
     return this.http.get<Mascota>(this.path + "/" + id);
   }
 
-  getMascotasVendidas() {
-    return this.http.get<Mascota[]>(this.path + "/vendidas");
-  }
-
-  getMascotasStock() {
-    return this.http.get<Mascota[]>(this.path + "/stock");
+  getMascotasVendidas(estado: number) {
+    return this.http.get<Mascota[]>(this.path + "/historial/"+ estado);
   }
 
   altaMascota(mascota: Mascota) {

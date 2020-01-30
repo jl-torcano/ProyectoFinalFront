@@ -22,7 +22,7 @@ export class UsuarioService {
    }
 
    getUsuarioUsername(userName:string){
-    return this.http.get<Usuario>(this.path+"/"+userName);
+    return this.http.get<Usuario>(this.path+"/name/"+userName);
    }
 
    altaUsuario(usuario:Usuario){
