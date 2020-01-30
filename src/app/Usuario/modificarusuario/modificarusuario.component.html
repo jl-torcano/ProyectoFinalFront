@@ -1,0 +1,16 @@
+<h2>MODIFICAR USUARIO</h2>
+
+<form action="">
+    <label for="nombre" placeholder="Nombre">Nombre Personal</label>
+    <input type="text" required autocomplete="off" name="nombre" id="nombre" [(ngModel)]="usuario.nombre">
+
+    <label for="apellido" placeholder="Apellido">Primer Apellido</label>
+    <input type="text" required autocomplete="off" name="apellido" id="apellido" [(ngModel)]="usuario.apellido">
+
+    <label for="tlf" placeholder="Telefono">Teléfono</label>
+    <input type="text" required autocomplete="off" name="tlf" id="tlf" [(ngModel)]="usuario.tlf">
+
+    <label for="user" placeholder="Usuario">Nombre de Usuario</label>
+    <input type="text" required autocomplete="off" name="user" id="user" [(ngModel)]="usuario.userName">
+
+    <button (click)="modificarUsuario(usuario)">Modificar</button>

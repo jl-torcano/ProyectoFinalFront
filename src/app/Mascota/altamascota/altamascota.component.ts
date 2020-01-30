@@ -10,18 +10,21 @@ import { Router } from '@angular/router';
 })
 export class AltamascotaComponent implements OnInit {
 
-  mascota:Mascota={};
+  mascota: Mascota = {};
 
-  constructor(private http:MascotaService, private router:Router) { }
+  constructor(private http: MascotaService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  altaMascota(){
-    this.mascota.vendida=-1;
-    this.http.altaMascota(this.mascota).subscribe(datos=>{this.router.navigate(["listadoMascotas"]);
+  altaMascota() {
+    this.mascota.vendida = -1;
+    this.mascota.amo = "Tienda";
+    this.mascota.vendedor = " - ";
+    this.http.altaMascota(this.mascota).subscribe(datos => {
+      this.router.navigate(["listadoMascotas"]);
     })
   }
-
+  
 
 }

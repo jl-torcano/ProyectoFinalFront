@@ -1,0 +1,11 @@
+<h2>LOGIN DE USUARIO</h2>
+
+<form (submit)="acceso()">
+    <label for="usuario" placeholder="usuario">Usuario</label>
+    <input type="text" required autocomplete="off" name="usuario" id="usuario" [(ngModel)]="userName">
+
+    <label for="pass" placeholder="contraseña">Contraseña</label>
+    <input type="password" required autocomplete="off" name="pass" id="pass" [(ngModel)]="pass">
+
+    <button (click)="submit">Entrar</button>
+</form>

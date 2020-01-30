@@ -1,0 +1,16 @@
+<h2>MODIFICAR CLIENTE {{cliente.dni}}</h2>
+
+<form action="">
+    <label for="nombre">Nombre</label>
+    <input type="text" required autocomplete="off" name="nombre" id="nombre" [(ngModel)]="cliente.nombre">
+
+    <label for="apellido">Apellido</label>
+    <input type="text" required autocomplete="off" name="apellido" id="apellido" [(ngModel)]="cliente.tipo">
+
+    <label for="direccion">Direccion</label>
+    <input type="text" required autocomplete="off" name="direccion" id="direccion" [(ngModel)]="cliente.direccion">
+
+    <label for="vendida">En stock (1) / Vendida (-1) </label>
+    <input type="text" required autocomplete="off" name="vendida" id="vendida" [(ngModel)]="cliente.vendida">
+
+    <button (click)="modificarMascota(mascota)">Modificar</button>

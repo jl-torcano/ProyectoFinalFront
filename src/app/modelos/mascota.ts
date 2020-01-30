@@ -4,4 +4,6 @@ export interface Mascota {
     tipo?:string;
     precio?:number;
     vendida?:number;
+    amo?:string;
+    vendedor?:string;
 }

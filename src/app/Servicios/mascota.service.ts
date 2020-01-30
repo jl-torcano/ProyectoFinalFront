@@ -7,33 +7,43 @@ import { Mascota } from '../modelos/mascota';
   providedIn: 'root'
 })
 export class MascotaService {
-private path:string;
-  constructor(private http:HttpClient) {
-    this.path='http://localhost:8080/mascotas';
-   }
 
-   getMascotas(){
-     return this.http.get<Mascota[]>(this.path);
-   }
+  private path: string;
 
-   getTipoMascotas(){
-     return this.http.get<Mascota[]>(this.path+"/tipo");
-   }
+  constructor(private http: HttpClient) {
+    this.path = 'http://localhost:8080/mascotas';
+  }
 
-   getUnaMascota(id:number){
-     return this.http.get<Mascota>(this.path+"/"+id);
-   }
+  getMascotas() {
+    return this.http.get<Mascota[]>(this.path);
+  }
 
-   altaMascota(mascota:Mascota){
+  getTipoMascotas() {
+    return this.http.get<Mascota[]>(this.path + "/tipo");
+  }
+
+  getUnaMascota(id: number) {
+    return this.http.get<Mascota>(this.path + "/" + id);
+  }
+
+  getMascotasVendidas() {
+    return this.http.get<Mascota[]>(this.path + "/vendidas");
+  }
+
+  getMascotasStock() {
+    return this.http.get<Mascota[]>(this.path + "/stock");
+  }
+
+  altaMascota(mascota: Mascota) {
     return this.http.post<Mascota>(this.path, mascota);
-   }
+  }
 
-   actualizarMascota(mascota:Mascota){
-     return this.http.put<Mascota>(this.path+"/"+mascota.id, mascota);
-   }
+  actualizarMascota(mascota: Mascota) {
+    return this.http.put<Mascota>(this.path + "/" + mascota.id, mascota);
+  }
 
-   bajaMascota(id:number){
-     return this.http.delete<Mascota>(this.path+"/"+id);
-   }
+  bajaMascota(id: number) {
+    return this.http.delete<Mascota>(this.path + "/" + id);
+  }
 
 }

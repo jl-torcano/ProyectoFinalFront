@@ -1,0 +1,27 @@
+<h2>LISTADO DE USUARIOS</h2>
+
+<table>
+    <tr>
+        <th>id</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Telefono</th>
+        <th>Nombre de Usuario</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+    </tr>
+    <tr *ngFor="let usuario of listadoUsuarios">
+        <td>{{usuario.id}}</td>
+        <td>{{usuario.nombre}}</td>
+        <td>{{usuario.apellido}}</td>
+        <td>{{usuario.tlf}}</td>
+        <td>{{usuario.userName}}</td>
+        <td><button (click)="editarUsuario(usuario)">modificar</button></td>
+        <td><button (click)="eliminarUsuario(usuario)">eliminar</button></td>
+    </tr>
+</table>
+
+<button (click)="irNuevoUsuario()">Nuevo Usuario</button>
+
+
+

@@ -1,6 +1,6 @@
 <h2>ALTA DE MASCOTAS</h2>
 
-<form (submit)="altaMascota()" action="altaMascota()">
+<form (submit)="altaMascota()">
     <label for="nombre" placeholder="Nombre Mascota">Nombre de Mascota</label>
     <input type="text" required autocomplete="off" name="nombre" id="nombre" [(ngModel)]="mascota.nombre">
 
@@ -10,4 +10,6 @@
     <label for="precio" placeholder="Precio Mascota">Precio de la Mascota</label>
     <input type="text" required autocomplete="off" name="precio" id="precio" [(ngModel)]="mascota.precio">
 
-    <button type="submit">Modificar</button>
+    <button type="submit">Alta</button>
+
+</form>

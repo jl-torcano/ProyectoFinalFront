@@ -25,6 +25,15 @@ import { MascotaService } from './Servicios/mascota.service';
 import { ListadomascotasComponent } from './Mascota/listadomascotas/listadomascotas.component';
 import { ModificarmascotaComponent } from './Mascota/modificarmascota/modificarmascota.component';
 import { AltamascotaComponent } from './Mascota/altamascota/altamascota.component';
+import { AltausuarioComponent } from './Usuario/altausuario/altausuario.component';
+import { ListadousuarioComponent } from './Usuario/listadousuario/listadousuario.component';
+import { ModificarusuarioComponent } from './Usuario/modificarusuario/modificarusuario.component';
+import { AltaclienteComponent } from './Cliente/altacliente/altacliente.component';
+import { ModificarclienteComponent } from './Cliente/modificarcliente/modificarcliente.component';
+import { ListadoclienteComponent } from './Cliente/listadocliente/listadocliente.component';
+import { AdministradorComponent } from './Usuario/administrador/administrador.component';
+import { VendedorComponent } from './Usuario/vendedor/vendedor.component';
+import { AccesoComponent } from './Usuario/acceso/acceso.component';
 
 
 @NgModule({
@@ -39,7 +48,16 @@ import { AltamascotaComponent } from './Mascota/altamascota/altamascota.componen
     TlfDirective,
     ListadomascotasComponent,
     ModificarmascotaComponent,
-    AltamascotaComponent
+    AltamascotaComponent,
+    AltausuarioComponent,
+    ListadousuarioComponent,
+    ModificarusuarioComponent,
+    AltaclienteComponent,
+    ModificarclienteComponent,
+    ListadoclienteComponent,
+    AdministradorComponent,
+    VendedorComponent,
+    AccesoComponent
   ],
   imports: [
     BrowserModule,

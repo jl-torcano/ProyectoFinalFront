@@ -1,0 +1,88 @@
+<h2>Alta Cliente</h2>
+
+<form (submit)="altaCliente()">
+    <label for="dni" placeholder="dni">DNI</label>
+    <input type="text" required autocomplete="off" name="nombre" id="nombre" [(ngModel)]="cliente.dni"
+        [ngModelOptions]="{updateOn:'blur'}" #dni="ngModel">
+
+    <div class="alert alert-danger" *ngIf="dni.invalid && (dni.dirty || dni.touched)">
+        <div *ngIf="dni.errors.required">
+            El dni es OBLIGATORIO
+        </div>
+    </div>
+
+    <label for="nombre" placeholder="Nombre">Nombre</label>
+    <input type="text" required autocomplete="off" name="nombre" id="nombre" [(ngModel)]="cliente.nombre"
+        [ngModelOptions]="{updateOn:'blur'}" pattern="^[a-z]*$" #nombre="ngModel">
+
+    <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+        <div *ngIf="nombre.errors.required">
+            El nombre es OBLIGATORIO
+        </div>
+        <div *ngIf="nombre.errors.pattern">
+            El nombre solo puede tener caracteres
+        </div>
+    </div>
+
+    <label for="apellido" placeholder="Apellido">Apellido</label>
+    <input type="text" required autocomplete="off" name="apellido" id="apellido" [(ngModel)]="cliente.apellido"
+        [ngModelOptions]="{updateOn:'blur'}" pattern="^[a-z]*$" #apellido="ngModel">
+
+    <div class="alert alert-danger" *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)">
+        <div *ngIf="apellido.errors.required">
+            El apellido es OBLIGATORIO
+        </div>
+        <div *ngIf="apellido.errors.pattern">
+            El apellido solo puede tener caracteres
+        </div>
+    </div>
+
+    <label for="direccion" placeholder="Direccion">Vivienda</label>
+    <input type="text" required autocomplete="off" name="direccion" id="direccion" [(ngModel)]="cliente.direccion"
+        [ngModelOptions]="{updateOn:'blur'}" #direccion="ngModel">
+
+    <div class="alert alert-danger" *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)">
+        <div *ngIf="direccion.errors.required">
+            La dirección es OBLIGATORIA
+        </div>
+    </div>
+
+    <label for="localidad" placeholder="Localidad">Localidad</label>
+    <input type="text" required autocomplete="off" name="localidad" id="localidad" [(ngModel)]="cliente.localidad"
+        [ngModelOptions]="{updateOn:'blur'}" #localidad="ngModel">
+
+    <div class="alert alert-danger" *ngIf="localidad.invalid && (localidad.dirty || localidad.touched)">
+        <div *ngIf="localidad.errors.required">
+            La localidad es OBLIGATORIA
+        </div>
+    </div>
+
+    <label for="correo" placeholder="Correo Electrónico">Email</label>
+    <input type="text" required autocomplete="off" name="correo" id="correo" [(ngModel)]="cliente.correo"
+        [ngModelOptions]="{updateOn:'blur'}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" #correo="ngModel">
+
+    <div class="alert alert-danger" *ngIf="correo.invalid && (correo.dirty || correo.touched)">
+        <div *ngIf="correo.errors.required">
+            El correo es OBLIGATORIO
+        </div>
+        <div *ngIf="correo.errors.pattern">
+            Introduzca un correo valido
+        </div>
+    </div>
+
+    <label for="tlf" placeholder="Telefono">Teléfono de contacto</label>
+    <input type="text" required autocomplete="off" name="tlf" id="tlf" [(ngModel)]="cliente.tlf"
+        [ngModelOptions]="{updateOn:'blur'}" pattern="^[a-z]*$" #tlf="ngModel">
+
+    <div class="alert alert-danger" *ngIf="tlf.invalid && (tlf.dirty || tlf.touched)">
+        <div *ngIf="tlf.errors.required">
+            El apellido es OBLIGATORIO
+        </div>
+        <div *ngIf="tlf.errors.pattern">
+            Introduzca un tlf Válido
+        </div>
+    </div>
+
+    <button type="submit">Alta</button>
+
+</form>

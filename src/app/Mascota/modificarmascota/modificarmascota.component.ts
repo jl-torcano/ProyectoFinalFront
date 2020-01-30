@@ -10,23 +10,24 @@ import { Router } from '@angular/router';
 })
 export class ModificarmascotaComponent implements OnInit {
 
-  mascota:Mascota;
+  mascota: Mascota = {};
 
-  constructor(private http:MascotaService, private router:Router) { }
+  constructor(private http: MascotaService, private router: Router) { }
 
   ngOnInit() {
     this.cargarMascota();
   }
 
-  cargarMascota(){
-    let id=localStorage.getItem("id"); 
-    this.http.getUnaMascota(+id).subscribe(datos=>{this.mascota=datos;})
-    }
+  cargarMascota() {
+    let id = localStorage.getItem("id");
+    this.http.getUnaMascota(+id).subscribe(datos => { this.mascota = datos; })
+  }
 
-  modificarMascota(mascota:Mascota)
-  {
-  this.http.actualizarMascota(mascota).subscribe(datos=>{this.mascota=datos;this.router.navigate(["listadoMascotas"]);
-      })
-    }
+  modificarMascota(mascota: Mascota) {
+    this.http.actualizarMascota(mascota).subscribe(datos => {
+      this.mascota = datos;
+      this.router.navigate(["listadoMascotas"]);
+    })
+  }
 
 }

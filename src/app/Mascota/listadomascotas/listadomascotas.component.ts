@@ -10,24 +10,36 @@ import { Mascota } from 'src/app/modelos/mascota';
 })
 export class ListadomascotasComponent implements OnInit {
 
-  private listadoMascotas:Mascota[];
+  private listadoMascotas: Mascota[];
 
-  constructor(private http:MascotaService, private router:Router) { }
+  constructor(private http: MascotaService, private router: Router) { }
 
   ngOnInit() {
-    this.http.getMascotas().subscribe(datos=>{this.listadoMascotas=datos;})
+    this.http.getMascotas().subscribe(datos => { this.listadoMascotas = datos; })
   }
 
-  editarMascota(mascota:Mascota):void{
-    localStorage.setItem("id",mascota.id.toString());
+  editarMascota(mascota: Mascota): void {
+    localStorage.setItem("id", mascota.id.toString());
     this.router.navigate(['modificarMascota']);
   }
 
-  eliminarMascota(mascota:Mascota){
-    this.http.bajaMascota(mascota.id).subscribe(datos=>
-      {this.listadoMascotas=this.listadoMascotas.filter(m=>m!=mascota);
-    alert("Se ha eliminado la mascota"); this.router.navigate(['listadoMascotas'])
-      })
+  eliminarMascota(mascota: Mascota) {
+    this.http.bajaMascota(mascota.id).subscribe(datos => {
+    this.listadoMascotas = this.listadoMascotas.filter(m => m != mascota);
+      alert("Se ha eliminado la mascota"); this.router.navigate(['listadoMascotas'])
+    })
+  }
+
+  irNuevaMascota(){
+    this.router.navigate(['altaMascotas'])
+  }
+
+  historico(){
+    this.http.getMascotasVendidas().subscribe(datos => { this.listadoMascotas = datos; })
+  }
+
+  stock(){
+    this.http.getMascotasStock().subscribe(datos => { this.listadoMascotas = datos; })
   }
 
 }

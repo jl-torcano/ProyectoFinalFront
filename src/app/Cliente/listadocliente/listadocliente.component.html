@@ -1,0 +1,26 @@
+<h2>LISTADO DE CLIENTES</h2>
+
+<table>
+    <tr>
+        <th>DNI</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Direccion</th>
+        <th>Localidad</th>
+        <th>Correo</th>
+        <th>Telefono</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+    </tr>
+    <tr *ngFor="let cliente of listadoClientes">
+        <td>{{cliente.dni}}</td>
+        <td>{{cliente.nombre}}</td>
+        <td>{{cliente.apellido}}</td>
+        <td>{{cliente.direccion}}</td>
+        <td>{{cliente.localidad}}</td>
+        <td>{{cliente.correo}}</td>
+        <td>{{cliente.tlf}}</td>
+        <td><button (click)="editarCliente(cliente)">Modificar</button></td>
+        <td><button (click)="eliminarCliente(cliente)">Eliminar</button></td>
+    </tr>
+</table>
